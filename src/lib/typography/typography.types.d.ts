@@ -20,13 +20,14 @@ type TypographyTypes =
  */
 interface ITypographyBuilderProps {
   //types: string[]
-  className?: string;
+  className?: string
 }
 
 /**
  * Typography Base Props
  */
-interface ITypographyBaseProps<T extends string = "div"> extends React.HTMLAttributes<HTMLDivElement> {
+interface ITypographyBaseProps<T extends string = 'div'>
+  extends React.HTMLAttributes<HTMLDivElement> {
   /**
    * Text / HTML to be displayed
    */
@@ -41,7 +42,7 @@ interface ITypographyBaseProps<T extends string = "div"> extends React.HTMLAttri
    * ie. h1, span
    * allowing for customization of variants
    */
-  type: TypographyTypes | T;
+  type: TypographyTypes | T
 }
 
 /**
@@ -55,6 +56,7 @@ type RequiredKeys<T> = {
 /**
  * Required Keys from ITypographyBaseProps<T>
  */
-export type RequiredTypographyBaseProps<T extends string = "div"> = RequiredKeys<ITypographyBaseProps<T>>
+export type RequiredTypographyBaseProps<T extends string = 'div'> =
+  RequiredKeys<ITypographyBaseProps<T>>
 
 export type { TypographyTypes, ITypographyBaseProps, ITypographyBuilderProps }

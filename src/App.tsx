@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-import { MyTypography } from './my-typography'
+import { MyTypography , OtherTypography} from './my-typography'
 
 /**
  * That'd be cool.
@@ -39,13 +39,12 @@ function App() {
         <MyTypography label='c' type='span' />
       </MyTypography>
       <MyTypography label='ab' type='div'></MyTypography>
-      <MyTypography type='other' label='primary' primary />
       <MyTypography
         className='myotherclassname'
-        type='h1'
+        type='andSoOn'
         label='whatever'
-        primary
       />
+        <OtherTypography type='Hi' primary/>
 
     </div>
   )

@@ -5,7 +5,6 @@ import {
   RequiredTypographyBaseProps,
   ITypographyBuilderProps,
 } from './typography.types'
-import { ITypographyV2Props, TypographyV2 } from './typographyv2'
 
 const builderOptions: ITypographyBuilderProps = {
   className: 'TANGLELABS_TYPOGRAPHY',
@@ -15,22 +14,28 @@ const builderOptions: ITypographyBuilderProps = {
  * ie. we add a TypographyV2, which props extends the BaseRequiredProps - it's plug and play
  * Consumer wouldn't know the backend has changed.
  */
-class TypographyBuilder {
+class TypographyBuilder<
+  IProps extends ITypographyBaseProps = ITypographyBaseProps
+> {
   Typography: any
-  constructor(
-    Typography: React.FunctionComponent<ITypographyBaseProps>
-  ) {
+  constructor(Typography: React.FunctionComponent<ITypographyBaseProps>) {
     this.Typography = Typography
   }
-  build<T extends string>(options: ITypographyBuilderProps | undefined = builderOptions) {
-    const {className} = options;
-    type JoinedTypes = TypographyTypes | T
-
+  /**
+   * builds component with custom types **T** from specified version **IProps**.
+   * @param {ITypographyBuilderProps | undefined} options
+   */
+  build<T extends string>(
+    options: ITypographyBuilderProps | undefined = builderOptions
+  ) {
+    const { className } = options
     const AbstractedTypography = this.Typography
-    return ({
-      className: givenClassName,
-      ...props
-    }: ITypographyV2Props<JoinedTypes>) => (
+
+    type JoinedTypes = T | TypographyTypes
+    type JoinedTypesProps = Pick<IProps, Exclude<keyof IProps, 'type'>> & {
+      type: JoinedTypes
+    }
+    return ({ className: givenClassName, ...props }: JoinedTypesProps) => (
       <AbstractedTypography
         className={[className, givenClassName].filter((e) => e).join(' ')}
         {...props}
@@ -39,5 +44,4 @@ class TypographyBuilder {
   }
 }
 
-const typographyBuilder = new TypographyBuilder(Typography)
-export { typographyBuilder, TypographyBuilder as _TypographyBuilder }
+export { TypographyBuilder };

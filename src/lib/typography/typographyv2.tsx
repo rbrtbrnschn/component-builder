@@ -1,8 +1,8 @@
-import { ITypographyBaseProps } from './typography.types'
+import { ITypographyBaseProps, TypographyTypes } from './typography.types'
 
 export interface ITypographyV2Props<T extends string = "div"> extends ITypographyBaseProps<T> {
   primary?: boolean;
-  type: T
+  type: T | TypographyTypes;
 }
 const defaults = {
   className: 'TANGLELABS_TYPOGRAPHY',
