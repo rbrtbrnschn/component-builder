@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+.TANGLELABS_TYPOGRAPHY.p {
+  margin: 1rem 0;
+  box-sizing: border-box;
+}
+.TANGLELABS_TYPOGRAPHY.h1 {
+  margin: 1rem 0;
+  margin-bottom: 2rem;
+  box-sizing: border-box;
+  font-size: xx-large;
+}
+.TANGLELABS_TYPOGRAPHY.span {
+  box-sizing: border-box;
+  display: inline;
+
+}
