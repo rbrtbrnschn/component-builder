@@ -19,7 +19,10 @@ type TypographyTypes =
  * Options for TypographyBuilder.#build() function
  */
 interface ITypographyBuilderProps {
-  //types: string[]
+  /**
+   * Prefixes each instance of your Typography Component with this here className
+   * Defaults to: **"TYPOGRPAHY"**
+   */
   className?: string
 }
 

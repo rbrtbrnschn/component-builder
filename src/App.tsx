@@ -44,7 +44,7 @@ function App() {
         type='andSoOn'
         label='whatever'
       />
-        <OtherTypography type='Hi' primary/>
+        <OtherTypography type='Hi' primary label="hi"/>
 
     </div>
   )

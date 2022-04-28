@@ -7,7 +7,7 @@ import {
 } from './typography.types'
 
 const builderOptions: ITypographyBuilderProps = {
-  className: 'TANGLELABS_TYPOGRAPHY',
+  className: 'TYPOGRPAHY',
 }
 /**
  * exposing build method on singleton, to allow extensibility on our side.
