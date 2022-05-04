@@ -1,6 +1,7 @@
 import React from 'react'
 import './App.css'
 import { MyTypography , OtherTypography} from './my-typography'
+import {MyButton} from "./my-button";
 
 /**
  * That'd be cool.
@@ -45,6 +46,8 @@ function App() {
         label='whatever'
       />
         <OtherTypography type='Hi' primary label="hi"/>
+      <OtherTypography type='Hi' primary={false}><h1>YEAH</h1></OtherTypography>
+      <MyButton type='cool-button' label="foo">Foo</MyButton>
 
     </div>
   )
